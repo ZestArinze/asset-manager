@@ -17,4 +17,4 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [AssetController::class, 'home'])->name('home');
 Route::get('/users/{id}/assets/', [AssetController::class, 'userAssets'])->name('user.assets');
-Route::get('/user-groups/{id}/assets', [AssetController::class, 'groupAssets'])->name('group.assets');
+Route::get('/groups/{id}/assets', [AssetController::class, 'groupAssets'])->name('group.assets');
