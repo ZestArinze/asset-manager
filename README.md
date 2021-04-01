@@ -6,5 +6,7 @@
 
 ## Testing
 
-php artisan db:seed
-hit the routes
+- php artisan db:seed
+- hit the routes
+
+### ND: You might have to run the seeder multiple times
