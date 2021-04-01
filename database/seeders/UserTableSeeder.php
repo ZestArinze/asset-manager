@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\User;
+use App\Models\UserGroup;
 use Faker\Factory;
 use Illuminate\Database\Seeder;
 use Throwable;
@@ -23,10 +24,17 @@ class UserTableSeeder extends Seeder
 
         try {
             
-            if(User::count() >= 20) {
+            if(User::count() >= 10) {
                 dump(['User Count' => User::count()]);
             } else {
-                User::factory(10)->create();
+
+                $userGroups = UserGroup::all();
+
+                for($i = 0; $i < 10; $i++) {
+                    User::factory(2)->create([
+                        'user_group_id' => $faker->randomElement($userGroups)->id,
+                    ]);
+                }
             }
 
         } catch(Throwable $e) {

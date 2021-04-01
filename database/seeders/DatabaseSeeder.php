@@ -15,6 +15,7 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         $this->call([
+            // Note that the order matters due to dependencies
             AssetTypeTableSeeder::class,
             UserGroupTableSeeder::class,
             UserTableSeeder::class,
