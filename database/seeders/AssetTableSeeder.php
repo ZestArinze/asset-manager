@@ -35,9 +35,10 @@ class AssetTableSeeder extends Seeder
                 $userGroups = UserGroup::all();
 
                 for($i = 0; $i < 100; $i++) {
+                    
                     $assignToUser = $faker->randomElement([0, 1]);
 
-                    Asset::factory(100)->create([
+                    Asset::factory()->create([
                         'asset_type_id' => $faker->randomElement($assetTypes)->id,
                         'user_id' => $assignToUser ? $faker->randomElement($users)->id : null,
                         'user_group_id' => $assignToUser ? null : $faker->randomElement($userGroups)->id,
