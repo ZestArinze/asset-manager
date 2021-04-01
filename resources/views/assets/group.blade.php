@@ -13,6 +13,7 @@
         <p>No such group</p>
     @else
         @if(isset($assets) && $assets->count() > 0)
+            <h3>{{ $group->name }} Assets</h3>
             <ul>
                 @foreach($assets as $asset)
                     <li>{{ $asset->name }}</li>
